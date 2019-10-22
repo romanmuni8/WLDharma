@@ -13,3 +13,5 @@ db.sqlite3-journal
 /media
 /static
 # End of https://www.gitignore.io/api/django
+
+env/
