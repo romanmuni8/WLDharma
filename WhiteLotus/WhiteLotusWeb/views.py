@@ -11,7 +11,7 @@ def about(request):
 
 def calendar(request):
 
-    return render("cal.calendar.html")
+    return render(request, "cal.calendar.html")
 
 
 def events(request):
