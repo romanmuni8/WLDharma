@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
+    'cal.apps.CalConfig',
     'django_extensions',
     'blog.apps.BlogConfig',
     'django.contrib.admin',

@@ -24,7 +24,7 @@ urlpatterns = [
     path('about/', views.about, name = 'about'),
     path('events/', views.events, name = 'events'),
     path('dailyprayer/', views.dailyprayer, name='dailyprayer'),
-    path('calendar/', views.calendar, name='calendar'),
+    path('calendar/', include('cal.urls')),
     # path('pictures/', views.pictures),
     # path('membership/', views.membership),
 ]
