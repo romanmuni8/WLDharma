@@ -29,11 +29,11 @@ class Calendar(HTMLCalendar):
 			week += self.formatday(d, events)
 		return f'<tr> {week} </tr>'
 
-	def formatmonth(self, year, month, withyear=True):
-		events = Event.objects.filter(start_time__year= year, start_time__month= month)
+	def formatmonth(self, year, month):
+		events = Event.objects.filter(start_time__year=year, start_time__month= month)
 
 		cal = f'<table border="0" cellpadding="0" cellspacing="0" class="calendar">\n'
-		cal += f'{self.formatmonthname(year, month, withyear=withyear)}\n'
+		cal += f'{self.formatmonthname(year, month, withyear=True)}\n'
 		cal += f'{self.formatweekheader()}\n'
 		for week in self.monthdays2calendar(year, month):
 			cal += f'{self.formatweek(week, events)}\n'
