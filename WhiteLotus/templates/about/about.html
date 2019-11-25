@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <style>
+        h2 {
+            display: grid;
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
+            grid-gap: 20px;
+        }
+
+        h2:before,
+        h2:after {
+            content: '';
+            border-top: 2px solid;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5 p-3 text-center" style="background-color:rgba(0,0,0,0.5);font-size: 20px;">
+        <div class="row">
+            <div class="col">
+                {{ aboutPageText.text }}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {% if teachers %}
+            <h2 class="mt-3">Our Teachers</h2>
+        {% endif %}
+        <div class="row pt-1">
+            {% for teacher in teachers %}
+                <div class="col-4 p-1">
+                    <div class="card text-center">
+                        <img class="card-img-top" src="{{ teacher.picture.url }}">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">{{ teacher.name }}</h5>
+                            <p class="card-text text-dark">{{ teacher.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
