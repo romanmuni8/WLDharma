@@ -20,9 +20,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
-    path('',views.home),
-    path('about/', views.about, name = 'about'),
-    path('events/', views.events, name = 'events'),
+    path('', views.home),
+    path('about/', include('about.urls')),
+    path('events/', views.events, name='events'),
     path('dailyprayer/', views.dailyprayer, name='dailyprayer'),
     path('calendar/', include('cal.urls')),
     # path('pictures/', views.pictures),
