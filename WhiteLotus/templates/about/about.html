@@ -8,4 +8,22 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            {% for teacher in teachers %}
+                <div class="col-3">
+                    <div class="card text-center">
+                        <img class="card-img-top" src="{{ teacher.picture.url }}">
+
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">{{ teacher.name }}</h5>
+                            <p class="card-text text-dark">{{ teacher.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
 {% endblock %}
