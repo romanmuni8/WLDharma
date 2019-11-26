@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', views.home),
     path('about/', include('about.urls')),
-    path('events/', views.events, name='events'),
+    path('events/', include('currentEvent.urls')),
     path('dailyprayer/', views.dailyprayer, name='dailyprayer'),
     path('calendar/', include('cal.urls')),
     # path('pictures/', views.pictures),
