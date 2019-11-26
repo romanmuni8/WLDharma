@@ -27,4 +27,4 @@ def membership(request):
 
 
 def dailyprayer(request):
-    return render(request,"dailyPrayer.html")
+    return render(request, "dailyPrayer.html")
