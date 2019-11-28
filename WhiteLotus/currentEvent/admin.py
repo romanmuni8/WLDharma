@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import News
+from .models import News, Images
 
 
-admin.site.register(News)
+class ImagesAdmin(admin.TabularInline):
+    model = Images
+
+
+class NewsAdmin(admin.ModelAdmin):
+    inlines = [ImagesAdmin, ]
+
+
+admin.site.register(News, NewsAdmin)
