@@ -4,15 +4,54 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container bg-light rounded mt-5">
+    <div class="container my-5">
         <div class="row">
             <div class="col text-center">
-                <h2 class="text-dark">The Daily Prayer</h2>
+                <h2 class="title">The Daily Prayer</h2>
             </div>
         </div>
         <div class="row mt-2">
-            <div class="col text-center text-dark">
-                {{ daily_prayer.chosen.text }}
+            <div class="col text-center bg-trans-black rounded p-3">
+                <div class="my-2">
+                    Practice #{{ daily_prayer.chosen.number }}
+                </div>
+                {{ daily_prayer.chosen.text | linebreaks }}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="accordion" id="PracticeAccordion">
+
+                      <div class="card">
+                        <div class="card-header" id="headingOne">
+                          <h2 class="mb-0 text-dark text-center">
+                            The 37 Practices
+                          </h2>
+                        </div>
+                      </div>
+
+                    {% for practice in practices %}
+                      <div class="card">
+                        <div class="card-header" id="headingOne">
+                          <h2 class="mb-0 text-center">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ practice.id }}" aria-expanded="true" aria-controls="collapseOne">
+                                Practice #{{ practice.number }}
+                            </button>
+                          </h2>
+                        </div>
+
+                        <div id="collapse{{ practice.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#PracticeAccordion">
+                          <div class="card-body text-center text-dark">
+                            {{ practice.text | linebreaks }}
+                          </div>
+                        </div>
+
+                      </div>
+                    {% endfor %}
+
+                    </div>
             </div>
         </div>
     </div>
