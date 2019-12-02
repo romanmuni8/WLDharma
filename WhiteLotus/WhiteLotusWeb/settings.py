@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'currentEvent.apps.CurrenteventConfig',
     'about.apps.AboutConfig',
     'cal.apps.CalConfig',
     'django_extensions',
