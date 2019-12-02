@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def daily_prayer(request):
+    return render(request, 'dailyprayer/dailyprayer.html')
