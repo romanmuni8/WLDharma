@@ -2,7 +2,7 @@ from random import randrange
 
 from django.db.models import Max
 from django.shortcuts import render
-from .models import DailyPractice, Practice, DailyPracticeManager
+from .models import DailyPractice, Practice
 from datetime import date
 
 
@@ -16,7 +16,7 @@ def daily_prayer(request):
             dp.save()
     else:
         dp = DailyPractice.objects.create_daily_practice(chosen=get_random_practice(), choose_date=date.today())
-    return render(request, 'dailyprayer/dailyprayer.html')
+    return render(request, 'dailyprayer/dailyprayer.html', {'daily_prayer': dp, 'practices': Practice.objects.all()})
 
 
 def get_random_practice():

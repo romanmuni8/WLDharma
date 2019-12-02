@@ -4,5 +4,16 @@
 {% endblock %}
 
 {% block content %}
-    This is dailyPrayer
+    <div class="container bg-light rounded mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="text-dark">The Daily Prayer</h2>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col text-center text-dark">
+                {{ daily_prayer.chosen.text }}
+            </div>
+        </div>
+    </div>
 {% endblock %}
