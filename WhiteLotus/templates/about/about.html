@@ -1,22 +1,6 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <style>
-        h2 {
-            display: grid;
-            width: 100%;
-            align-items: center;
-            text-align: center;
-            grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
-            grid-gap: 20px;
-        }
-
-        h2:before,
-        h2:after {
-            content: '';
-            border-top: 2px solid;
-        }
-    </style>
 {% endblock %}
 
 {% block content %}
@@ -30,7 +14,7 @@
 
     <div class="container">
         {% if teachers %}
-            <h2 class="mt-3">Our Teachers</h2>
+            <h2 class="mt-3 title">Our Teachers</h2>
         {% endif %}
         <div class="row pt-1">
             {% for teacher in teachers %}

@@ -9,6 +9,23 @@
 
     <link rel="stylesheet" type = "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <style>
+        .title {
+            display: grid;
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
+            grid-gap: 20px;
+        }
+
+        .title:before,
+        .title:after {
+            content: '';
+            border-top: 2px solid;
+        }
+    </style>
+
     {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 
