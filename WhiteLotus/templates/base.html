@@ -24,6 +24,10 @@
             content: '';
             border-top: 2px solid;
         }
+        .bg-trans-black {
+            background-color:rgba(0,0,0,0.5);
+            font-size: 20px;
+        }
     </style>
 
     {% load static %}
@@ -54,7 +58,7 @@
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'dailyprayer' %}">DailyPrayer <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/dailyprayer/">DailyPrayer <span class="sr-only">(current)</span></a>
           </li>
 
           <li class="nav-item active">
